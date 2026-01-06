@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "spider_webber:block/fragile_webbl", "weight": 1
+      },
+      {
+        "model": "spider_webber:block/fragile_webbr", "weight": 1
+      },
+      {
+        "model": "spider_webber:block/fragile_webtl", "weight": 1
+      },
+      {
+        "model": "spider_webber:block/fragile_webtr", "weight": 1
+      }
+    ]
+  }
+}
