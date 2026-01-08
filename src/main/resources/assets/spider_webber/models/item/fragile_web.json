@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "spider_webber:block/fragile_webbr"
+  }
+}
+
