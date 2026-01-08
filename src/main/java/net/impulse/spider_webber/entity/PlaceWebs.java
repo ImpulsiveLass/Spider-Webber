@@ -16,7 +16,10 @@ import net.minecraftforge.fml.common.Mod;
 public class PlaceWebs {
 
     private static final String WEB_COOLDOWN = "WebCooldownTicks";
-    private static final int COOLDOWN_TICKS = (int)(SpiderWebberConfig.webCooldownInSeconds * 20);
+
+    private static int getIntialCooldownTicks() {
+        return (int)(SpiderWebberConfig.webCooldownInSeconds * 20);
+    }
 
     @SubscribeEvent
     public static void onSpiderTargets(LivingChangeTargetEvent event) {
@@ -34,7 +37,7 @@ public class PlaceWebs {
         if (!level.getBlockState(pos).isAir()) return;
 
         level.setBlock(pos, BlockRegistry.FRAGILE_WEB.get().defaultBlockState(), 3);
-        spider.getPersistentData().putInt(WEB_COOLDOWN, COOLDOWN_TICKS);
+        spider.getPersistentData().putInt(WEB_COOLDOWN, getIntialCooldownTicks());
     }
 
     @SubscribeEvent

@@ -7,4 +7,6 @@ public class SpiderWebberConfig extends MidnightConfig {
     public static float webCooldownInSeconds = 1.75f;
     @Entry(min=0.1f, max=100.0f, isSlider=true)
     public static float webDecayInSeconds = 5.25f;
+    @Entry
+    public static boolean fragileWebInCreativeTab = true;
 }

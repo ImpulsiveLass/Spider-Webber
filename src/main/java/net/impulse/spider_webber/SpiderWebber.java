@@ -3,7 +3,6 @@ package net.impulse.spider_webber;
 import eu.midnightdust.lib.config.MidnightConfig;
 import net.impulse.spider_webber.blocks.BlockRegistry;
 import net.impulse.spider_webber.config.SpiderWebberConfig;
-import net.impulse.spider_webber.creativetab.TabRegistry;
 import net.impulse.spider_webber.items.ItemRegistry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -23,6 +22,5 @@ public class SpiderWebber {
 
         BlockRegistry.BLOCKS.register(modBus);
         ItemRegistry.ITEMS.register(modBus);
-        TabRegistry.CREATIVE_TAB.register(modBus);
     }
 }

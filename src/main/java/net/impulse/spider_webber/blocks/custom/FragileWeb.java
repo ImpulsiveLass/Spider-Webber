@@ -21,11 +21,16 @@ import net.minecraft.world.phys.Vec3;
 public class FragileWeb extends WebBlock {
     public static final IntegerProperty DECAY = IntegerProperty.create("decay", 0, 2000);
 
-    public static final int DECAY_TICKS = Math.min((int)(SpiderWebberConfig.webDecayInSeconds * 20), 2000);
+    private static int getInitialDecayTicks() {
+        return Math.min(
+                (int)(SpiderWebberConfig.webDecayInSeconds * 20),
+                2000
+        );
+    }
 
     public FragileWeb(BlockBehaviour.Properties properties) {
         super(properties);
-        this.registerDefaultState(this.defaultBlockState().setValue(DECAY, DECAY_TICKS));
+        this.registerDefaultState(this.defaultBlockState().setValue(DECAY, getInitialDecayTicks()));
     }
 
     @Override
@@ -35,7 +40,7 @@ public class FragileWeb extends WebBlock {
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return this.defaultBlockState().setValue(DECAY, DECAY_TICKS);
+        return this.defaultBlockState().setValue(DECAY, getInitialDecayTicks());
     }
 
     @Override
